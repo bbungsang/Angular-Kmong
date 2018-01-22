@@ -6,12 +6,18 @@ import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main/main.component';
+import { NavComponent } from './core/nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    MainComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
