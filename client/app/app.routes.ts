@@ -10,6 +10,7 @@ export const routes: Routes = [
     component: MainComponent,
     children: [
       {path: '', component: HomeComponent},
+      {path: 'users', loadChildren: 'app/user/user.module#UserModule'}
     ]
   },
   {

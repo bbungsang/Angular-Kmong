@@ -1,9 +1,10 @@
-import { ServerLoader, ServerSettings } from 'ts-express-decorators';
+import { Inject, ServerLoader, ServerSettings } from 'ts-express-decorators';
 import path = require('path');
 import config from './config/config';
 
 import { Logger } from 'ts-log-debug';
 
+const cors = require('cors');
 const rootDir = path.resolve(__dirname);
 const errorLogger = new Logger('error');
 errorLogger.appenders.set('everything', {
@@ -41,6 +42,17 @@ export default class Server extends ServerLoader {
 
   public $onReady () {
     console.log('Server started...');
+  }
+
+  @Inject()
+  $onMountingMiddlewares() {
+    // Session Configuration
+    const bodyParser = require('body-parser');
+
+    this
+      .use(bodyParser.json({type: 'application/json'}))
+      .use(bodyParser.urlencoded({extended: false}))
+      .use(cors());
   }
 
   public $onServerInitError (err) {
