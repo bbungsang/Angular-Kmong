@@ -17,7 +17,7 @@ import { NavComponent } from './core/nav/nav.component';
     LoginComponent,
     HomeComponent,
     MainComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,

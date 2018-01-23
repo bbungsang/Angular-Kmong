@@ -1,0 +1,23 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["**/*.ts"],
+  "exclude" : ["node_modules","**/*.spec.ts"],
+  "compilerOptions": {
+    "outDir": "../dist/server",
+    "baseUrl": "",
+    "module": "commonjs",
+    "experimentalDecorators":true,
+    "emitDecoratorMetadata": true,
+    // "types": [
+    //   "reflect-metadata",
+    //   "mocha",
+    //   "chai"
+    // ],
+    "paths":{
+      "ts-express-decorators/testing": [
+        "node_modules/ts-express-decorators/dts/testing/index.d.ts",
+        "node_modules/ts-express-decorators/lib/testing/index.js"
+      ]
+    }
+  }
+}
